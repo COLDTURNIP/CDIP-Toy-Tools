@@ -1,0 +1,34 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# This program will move all the files under the tree of working directory, and
+# convert all the BMP images into PNG formate.
+#
+# NOTICE: the converting process depends on Python Imaging Library (PIL)
+# http://www.pythonware.com/products/pil/
+
+import os.shutil
+import Image # from PIL
+
+if __name__ == '__main__':
+	dstPath = os.getcwd()
+
+	# moving process
+	for dir, dirname, files in os.walk(dstPath):
+		if not root == dstPath:
+			print 'In path', dirname
+			if 'Thumbs.db' in files:
+				files = files.remove('Thumbs.db')
+			if files == None:
+				continue
+			for file in files:
+				shutil.move(os.path.join(root, file), dstPath)
+
+	# converting process
+	for file in os.listdir(dstPath):
+		srcDir, srcFile = os.path.split(file)
+		dstFileBase, ext = os.path.splitext(srcFile)
+		if ext == '.bmp':
+			dstFileName = dstFileBase + '.png'
+			Image.open(file).save(os.path.join(dstPath, dstFileName))
+
