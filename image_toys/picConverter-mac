@@ -25,10 +25,10 @@ if __name__ == '__main__':
 				shutil.move(os.path.join(dir, file), dstPath)
 
 	# converting process
-	for file in os.listdir(dstPath):
-		srcDir, srcFile = os.path.split(file)
-		dstFileBase, ext = os.path.splitext(srcFile)
-		if ext == '.bmp':
-			dstFileName = dstFileBase + '.png'
-			Image.open(file).save(os.path.join(dstPath, dstFileName))
+	#for file in os.listdir(dstPath):
+	#	srcDir, srcFile = os.path.split(file)
+	#	dstFileBase, ext = os.path.splitext(srcFile)
+	#	if ext == '.bmp':
+	#		dstFileName = dstFileBase + '.png'
+	#		Image.open(file).save(os.path.join(dstPath, dstFileName))
 
