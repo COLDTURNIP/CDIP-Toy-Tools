@@ -1,0 +1,13 @@
+# COLDTURNP's personal files
+__*
+
+# vim noise
+*.swp
+*~
+
+# osx noise
+.DS_Store
+profile
+
+# python nosie
+*.pyc
